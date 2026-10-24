@@ -57,7 +57,7 @@
 
 \usetikzlibrary{calc}
 
-\definecolor{ocre}{RGB}{127,127, 127} % Define the color used for highlighting throughout the book
+\definecolor{ocre}{RGB}{127, 127, 127} % Define the color used for highlighting throughout the book
 \definecolor{black}{RGB}{0, 0, 0}
 \definecolor{grayish}{RGB}{127, 127, 127}
 
@@ -96,9 +96,9 @@
 
 \noindent \textsc{Published by Myself :3}\\ % Publisher
 
-\noindent \textsc{\href{https://iniquity816.github.io/ocabook/}{https://iniquity816.github.io/ocabook/}}\\ % URL
+\noindent \textsc{\href{https://genevei.github.io/ocabook/}{https://genevei.github.io/ocabook/}}\\ % URL
 
-\noindent \textit{The Destruction of The World May 15th 2026, 44 Days After The Rapture} % Printing/edition date
+\noindent \textit{The Destruction of The World November 20th 2026, 233 Days After The Rapture} % Printing/edition date
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -178,45 +178,100 @@ We extend thanks to David S. Miller, the forum user "FWKnightship", and  the cre
 %----------------------------------------------------------------------------------------
 %	IN-TEXT ELEMENT EXAMPLES CHAPTER
 %----------------------------------------------------------------------------------------
-\part{The Square Tiling}
+\part{Square tiling}
 \chapterimage{1dca.png} % Chapter heading image
 \chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
 \chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter page
-\chapter{One-Dimensional Rules}
-\section{Elementary Cellular Automata}
-As the name \textit{one-dimensional cellular automata}\index{one-dimensional!cellular automata} suggests, the mechanisms that allow for cells to interact with each other are limited to the cell itself and other cells on the same row. Elementary cellular automata limit the neighbours of a cell further, to just the cells horizontally adjacent to it and itself. They were first considered in 1983 by \textbf{Stephen Wolfram}\index{Wolfram!Stephen}. 256 (= $2^8$) elementary cellular automata exist; an elementary cellular automaton's \textbf{Wolfram code}\index{Wolfram!code} is a decimal representation of the automaton's transition rules written in binary.
+\chapter{One-dimensional rules}
+\section{Elementary cellular automata}
+As the name \textit{one-dimensional cellular automata}\index{one-dimensional!cellular automata} suggests, the mechanisms that allow for cells to interact with each other are limited to the cell itself and other cells on the same row. Elementary cellular automata limit the neighbours of a cell further, to just the cells horizontally adjacent to it and itself. They were first considered in 1983 by \textbf{Stephen Wolfram}\index{Wolfram!Stephen}. 256 (= $2^8$) elementary cellular automata exist; an elementary cellular automaton's \textbf{Wolfram code}\index{Wolfram!code} is a decimal representation of the automaton's transition rules written in binary. 
 \chapterimage{vn.png} % Chapter heading image
 \chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
 \chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
-\chapter{The von Neumann Neighbourhood}
-The von Neumann neighbourhood, named after none other than John von Neumann (1903--1957), limits the number of neighbours a single cell can have to just the cells orthogonally adjacent to it. A 29-state rule with the von Neumann neighbourhood, devised by von Neumann in the 1940s with suggestions from Stanisław Ulam (1909--1984) to realise a \textbf{universal constructor}\index{universal construction} in the form of a \textbf{self-replicating machine}\index{replicator!self-replicating machine}, was the first example of a cellular automaton using this neighbourhood (and the first cellular automaton in general). The first implementation of his machine, using his original 29-state specification, would only come in 2007.\footnote{An earlier implementation by Renato Nobili and Umberto Pesavento in 1994 used a version of von Neumann's rule with 32 states. \cite{10.1162/artl.1995.2.4.337}}
+\chapter{The von Neumann neighbourhood}
+The von Neumann neighbourhood, named after none other than John von Neumann (1903--1957), limits the number of neighbours a single cell can have to just the cells orthogonally adjacent to it. A 29-state rule with the von Neumann neighbourhood, devised by von Neumann in the 1940s with suggestions from Stanisław Ulam (1909--1984) to realise a \textbf{universal constructor}\index{universal construction} in the form of a \textbf{self-replicating machine}\index{replicator!self-replicating machine}, was the first example of a cellular automaton using this neighbourhood (and the first cellular automaton in general). The first implementation of his machine, using his original 29-state specification, would only appear in 2007.\footnote{An earlier implementation by Renato Nobili and Umberto Pesavento in 1994 used a version of von Neumann's rule with 32 states. \cite{10.1162/artl.1995.2.4.337}}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=2]{vonneumann.pdf}
 	\caption{The von Neumann neighbourhood (in \textcolor{grayish}{grey}) of the central cell (in \textbf{black}).}
 	\label{fig:vnrange1}
 \end{figure}
-\section{Two-state von Neumann Rules}
+\section{Two-state von Neumann rules}
 Two-state von Neumann rules are extremely limited; they require birth on 1 neighbour to expand outside their initial bounding box (but this, in turn, makes rules hopelessly explosive). A simple proof of this is provided below.
 [add proof]
-\section{Three-state von Neumann Rules}
-[insert shameless self plug here]
-\section{Circuitry Rules}
+Such rules are customarily suffixed with the "V" character to denote their neighbourhood. This practice can and has been extended to other types of von Neumann rules.
+\section{Three-state von Neumann rules}
+Attention to such rules has been paid since at least 2007, when \textbf{Artem Dergachev}\index{Dergachev ! Artem}} stumbled upon the rule he termed \texttt{B1x2/S23V}. More recently, in October 2025, a notation emerged for writing rules of this particular type. $3^{45}$ (2954312706550833698643) rules belong to this family.
+\section{Circuitry rules and higher-state rules}
 All four Banks rules, Codd, Devore, Flow6, and von Neumann's constructor rule all use the von Neumann neighbourhood.
 [add pictures of Banks-I to Banks-IV, Codd, Devore, Flow6, and the Sphinx in action]
-\chapterimage{ot.png}
+\chapterimage{drylife.png}
 \chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
 \chapterspacebelow{7.25cm}
-\chapter{The Moore Neighbourhood}
-\section{Outer-Totalistic Rules}
-In outer-totalistic rules, only the number of alive cells a cell has matters (cells are born without consideration of the positions of the neighbours of the cell, relative to eachother). The Game of Life belongs to this family; $2^{18}$ ( = 262144) rules belong to this family. Out of these 262144 rules:
+\chapter{The Moore neighbourhood}
+\section{Outer-totalistic rules}
+In outer-totalistic rules, only the number of alive cells a cell has matters (cells are born without consideration of the positions of the neighbours of the cell, relative to eachother). The Game of Life belongs to this family; $2^{18}$ (262144) rules belong to this family. Out of these 262144 rules:
 \begin{itemize}
-	\item $2^{16}$ ( = 65536) of them have the lowest birth condition as one neighbour, meaning no stable objects except replicators exist.
-	\item $2^{15}$ ( = 32768) of them have the lowest birth condition as two neighbours, meaning lightspeed frontends made of dominos can propagate through the universe and subsequently cause explosions.
-	\item $2^{14}$ ( = 16384) of them have the lowest birth condition as three neighbours, meaning growth is often non-explosive, or at the very least predictably so. The aforementioned rules listed above are in this particular family.
-	\item $2^{14}$ of them have the lowest birth condition as four or more neighbours, meaning growth is impossible and patterns often localize in boxes that are unable to grow or expand by themselves.
-	\item $2^{17}$ (= 131072) of them have the lowest birth condition as zero neighbours. If the highest survival condition in a rule in this family is eight neighbours (the maximum), then no finite patterns can exist, as the background becomes filled with infinitely many alive cells. If the highest survival condition is not eight neighbours, as is the case in $2^{16}$ of them, then the background flickers between dead and alive each generation; this is often circumvented by CA simulation software in order to avoid simulating infinite cells.
+	\item $2^{16}$ (65536) of them have the lowest birth condition as one neighbour, meaning no stable objects except replicators exist.
+	\item $2^{15}$ (32768) of them have the lowest birth condition as two neighbours, meaning lightspeed frontends made of dominos can propagate through the universe and subsequently cause \textbf{explosions}.
+	\item $2^{14}$ (16384) of them have the lowest birth condition as three neighbours, meaning growth is often non-explosive, or at the very least predictably so. The aforementioned rules listed above are in this particular family.
+	\item $2^{14}$ of them have the lowest birth condition as four or more neighbours, meaning growth is impossible and patterns localize in boxes that are unable to grow or expand by themselves.
+	\item $2^{17}$ (131072) of them have the lowest birth condition as zero neighbours. If the highest survival condition in a rule in this family is eight neighbours (the maximum), then no finite patterns can exist, as the background becomes filled with infinitely many alive cells. If the highest survival condition is not eight neighbours, as is the case in $2^{16}$ of them, then the background flickers between dead and alive each generation; this is often circumvented by CA simulation software in order to avoid simulating infinite cells, by simulating the rule internally as an \textbf{alternating rule}\index{alternating rule}.
 \end{itemize} 
+Starting in 1998, \textbf{David Eppstein}\index{Eppstein!David} began maintaining a database of spaceships, or gliders as all spaceships were termed, in outer-totalistic rules.
+\subsection{Life variants}
+HighLife (B36/S23)
+\subsection{Other interesting rules}
+\section{Isotropic non-totalistic rules}
+Isotropic non-totalistic rules
+$2^{102}$ (5070602400912917605986812821504) rules belong to this family.
+\part{Hexagonal tiling}
+The
+\part{Triangular tiling}
+\section{Emulation of rules on the hexagonal tiling}
+\part{Other tilings}
+The
+\chapterimage{vn.png} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+\chapter{Generalisations}
+\section{Extensions}
+The
+\phantomsection
+\subsection*{BSFKL}
+\addcontentsline{toc}{subsection}{BSFKL}
+The
+\phantomsection
+\section{Alternating rules}\index{alternating rule}
+The
+\section{Generations}
+The
+\section{Larger than Life}
+\subsection{Higher-range outer-totalistic}
+\section {Cyclic cellular automata}
+\part{Meta-analysis}
+The
+\section{History}
+\subsection{Genealogy}
+\section{Cosmology}
+Cosmology is the study of the ultimate progression of patterns in cellular automata over time. Depending on how patterns in rules interact and co-evolve with eachother, the rule may be classified as one of the following:
+\begin{itemize}
+\item \textbf{Stable}.\index{stable} Patterns will typically localize themselves to small, independent portions of their original size that remain stagnant over thousands of generations.
+\item \textbf{Explosive}.\index{explosive} Patterns will typically grow beyond their original size, growing unpredictably and often coagulating into a single, volatile clump of cells. Spaceships may escape from such a cluster and can evade the explosion, or in some cases, become assimilated if its speed is too slow to outmaneuver the growth behind it.
+\end{itemize}
+This is a popular extension of Wolfram's classification scheme devised in 1983:
+\begin{itemize}
+\item \textbf{Class one}. \index{classes}\index{Wolfram!classification}Patterns tend towards the vacuum in a highly predictable manner.
+\item \textbf{Class two}. Patterns tend towards small, non-interfering stationary ash.
+\item \textbf{Class three}. Patterns grow beyond predictability in a chaotic, seemingly unending manner.
+\item \textbf{Class four}. Patterns display both microcosmic order and macrocosmic randomness.
+\end{itemize}
+The case of \texttt{B34/S34} (3-4 Life), first written about in Volume 4 of the Lifeline newsletter, published in December 1971, is a rare example of a rule seemingly considered to be stable before recent advents in computing power challenged these beliefs.
+\section{Software and computation}
+\subsection{Implementation of rulespaces}
+\subsection{Pattern identification}
+\subsection{Pattern searching}
+\subsection{Rulegolfing}
 
 %-----------------------------------------------
 
@@ -261,21 +316,38 @@ In outer-totalistic rules, only the number of alive cells a cell has matters (ce
 %	APPENDICES
 %----------------------------------------------------------------------------------------
 
-\chapterimage{ot.png} % Chapter heading image
+\chapterimage{drylife.png} % Chapter heading image
 \chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
 \chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
 
-\begin{appendices}
-
+\chapter{Appendix}
 \renewcommand{\chaptername}{Appendix} % Change the chapter name to Appendix, i.e. "Appendix A: Title", instead of "Chapter A: Title" in the headers
 
 %------------------------------------------------
 
-\chapter{Appendix Chapter Title}
+\chapter{Pattern identification}
 
-\section{Appendix Section Title}
+\section{Object formats}
+A distinction between pattern and object formats must be made: pattern formats are made to store any configuration of cells, whilst object formats are made to store any identifiable object. "o" and "p" enclosed in parentheses denote the format's intended use.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor mi risus, quis tempor libero hendrerit at. Duis hendrerit placerat quam et semper. Nam ultricies metus vehicula arcu viverra, vel ullamcorper justo elementum. Pellentesque vel mi ac lectus cursus posuere et nec ex. Fusce quis mauris egestas lacus commodo venenatis. Ut at arcu lectus. Donec et urna nunc. Morbi eu nisl cursus sapien eleifend tincidunt quis quis est. Donec ut orci ex. Praesent ligula enim, ullamcorper non lorem a, ultrices volutpat dolor. Nullam at imperdiet urna. Pellentesque nec velit eget est euismod pretium.
+\textbf{RLE} (p): Short for \textit{Run Length Encoded}. Patterns encoded as such customarily start with a header line, denoting the bounding box of the pattern and the rule it runs in: "x = m, y = n, rule = abc", where m, n, and the placeholder rule are substituted for the total number of columns, rows, and the rule respectively. Runs in the pattern are written as numbers followed by "b" for dead cells and "o" for alive cells (if they exist; the numbers are omitted otherwise.) Newlines are marked with the "\$" character, and a number before said character can be used to encode repeated blank lines. 
+
+Comments can be defined with lines beginning with the "\#" character and are followed by a letter indicating the purpose of the comment: "C" (or "c") precede a generic string; "N" is the name of the pattern where such exists; "O" lists metadata about the pattern such as its discoverer and the time the pattern was saved; "R" lists the coordinates of the top-left corner of the pattern; and "r" lists the rule of the pattern in "S/B" format without the opening letters. 
+
+\textbf{apgcode} (o): Also known as Extended Wechsler format. Objects are split into strips of five rows that encompass the whole of the pattern. From left-to-right, each column of the strip is read top-to-bottom and the five cells in this order, in binary, are written as the corresponding character in a character set starting with the character "0", proceeding with the numerals before beginning with lowercase letters, ending with the character "w". The characters "x" and "y" compress two and three empty columns ("00" and "000") respectively -  "y" followed by any letter in an extended version of the character set ending with the lowercase letter "z" denotes any run of four empty columns or longer, with the letter after it describing its length, and multiple of these can be used to compress empty columns of length longer than 40. "z" characters are used to end the current strip and begin the next one. Once the final strip has been encoded, the pattern is prepended with an "x" character and, depending on the type of pattern, can be followed by one of two strings: "s" and the object's population if it is a still life, and "p" and the object's period if it is an oscillator.
+
+Linear growth patterns are a special case: their apgcodes start with "yl" and are immediately followed by the period at which the growth of the total population repeats, then by the period at which the population of the products repeats, the value of population growth after the number of generations specified in the first value have passed, and the MD5 digest of the total sum of the square of the population in a specific phase and the population \textit{n} generations after, where n is the period of the population of the products, and the cube of the aforementioned population, with a "\#" character interspersed. 
+
+To determine the canonical apgcode for an object, the apgcodes for all orientations and phases of the object are generated, and the lexicographically earliest encoding is considered the object's canonical apgcode.
+For objects in multi-state rules, the above procedures are repeated for each state the cells have in the object: the pattern is prefixed with identifying information as above, and each state is encoded and separated with underscores. During this encoding, only the relevant cells are encoded - no cells of other states are present.
+
+\textbf{SOF} (o): Also known as Small Object Format. Objects are written as runs of cells alternating between each state for each row. "-" and "." characters separate each encoded row of the pattern and conclude the SOF encoding itself, respectively. If the row does not start with an ON cell, the run of OFF cells is written first; if the row is empty, it is skipped.
+The characters in the ASCII set between ":" and "~" inclusive are used to extend the numeral character set for cell runs greater or equal to 10 cells. If a run is still equal to or longer than 79 cells, the character "]" corresponding to a run of 78 cells is written, followed by a "0" and the number that remains after subtraction of the original run with 78, repeated as necessary.
+(Repeated empty lines can be truncated to a "+" character and the total number of repetitions, subject to the same rules above, before a non-empty line or the end of the pattern, but this went unimplemented.)
+Comments can be defined after the "." character; comments can start either with "!" on the very next line representing a generic string, or begin with the name of the pattern enclosed in parentheses that may appear before or after any generic comments.
+
+To compute the canonical SOF encoding of an object, or the SOF of its \textbf{Standard Form}\index{Standard Form}, all phases of the object and the eight orientations of these phases are compared with one another.
+The preference for encoding is any phase with a distinct smallest population; if no such phase exists, the composite bounding boxes of each phase and the orientation being considered (the union of the bounding boxes) are used to equalise each pattern's bounding box. From left-to-right, top-to-bottom, each phase is checked with padding (on the east and south sides) applied; the first instance where an ON cell is present in one pattern where an OFF cell is present in the other is considered the canonical version. All eight orientations (and phases) are sorted by these rules. The Standard Form of an object, and the phase of the SOF encoding, is the first form of this sorting. If both patterns are iterated through and no inequalities are found, the patterns are considered identical for the purposes of sorting. For spaceships, only one orientation is considered: for an orthogonal spaceship, the object is oriented north; for a diagonal spaceship, it is oriented northwest; for an oblique spaceship, it is oriented north-northwest. For linear growth patterns such as guns and puffers, their products are ignored during canonisation. Primarily used by www.pentadecathlon.com from early 2005 to late 2022, upon the website's shutdown.
 
 %------------------------------------------------
 
@@ -286,8 +358,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor mi risus
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor mi risus, quis tempor libero hendrerit at. Duis hendrerit placerat quam et semper. Nam ultricies metus vehicula arcu viverra, vel ullamcorper justo elementum. Pellentesque vel mi ac lectus cursus posuere et nec ex. Fusce quis mauris egestas lacus commodo venenatis. Ut at arcu lectus. Donec et urna nunc. Morbi eu nisl cursus sapien eleifend tincidunt quis quis est. Donec ut orci ex. Praesent ligula enim, ullamcorper non lorem a, ultrices volutpat dolor. Nullam at imperdiet urna. Pellentesque nec velit eget est euismod pretium.
 
 %------------------------------------------------
-
-\end{appendices}
 
 %----------------------------------------------------------------------------------------
 
